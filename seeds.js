@@ -81,3 +81,12 @@ const seedProducts = [
 		category: "fruit",
 	},
 ];
+
+//if there are any validation errors mongoose will not insert anything
+Product.insertMany(seedProducts)
+	.then((res) => {
+		console.log(res);
+	})
+	.catch((e) => {
+		console.log("ERROR: :", e);
+	});
